@@ -186,6 +186,7 @@
     </MediaPlayers>
     <MediaPool>
         <Stills>
+            <Still index="0" name="lower-3rd-trans-premul" path="ATEM Media Pool/lower-3rd-trans-premul.png"/>
             <Still index="2" name="iPhone8Plus-Overlay" path="ATEM Media Pool/iPhone8Plus-Overlay.png"/>
         </Stills>
     </MediaPool>
@@ -288,6 +289,15 @@
             <Op id="DVEAndFlyKeyXPosition" mixEffectBlockIndex="0" keyIndex="0" xPosition="11.24"/>
             <Op id="DVEAndFlyKeyYPosition" mixEffectBlockIndex="0" keyIndex="0" yPosition="3.39999"/>
             <Op id="KeyOnAir" mixEffectBlockIndex="0" keyIndex="0" onAir="True"/>
+        </Macro>
+        <Macro index="2" name="Lower 3rd" description="">
+            <Op id="MediaPlayerSourceStillIndex" mediaPlayer="0" index="0"/>
+            <Op id="MediaPlayerSourceStill" mediaPlayer="0"/>
+            <Op id="DownstreamKeyFillInput" keyIndex="0" input="MediaPlayer1"/>
+            <Op id="DownstreamKeyCutInput" keyIndex="0" input="MediaPlayer1Key"/>
+            <Op id="DownstreamKeyPreMultiply" keyIndex="0" preMultiply="True"/>
+            <Op id="KeyOnAir" mixEffectBlockIndex="0" keyIndex="0" onAir="False"/>
+            <Op id="DownstreamKeyOnAir" keyIndex="0" onAir="True"/>
         </Macro>
     </MacroPool>
     <MacroControl loop="False"/>
