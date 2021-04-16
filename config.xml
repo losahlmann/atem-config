@@ -14,7 +14,7 @@
             <Keys>
                 <Key index="0" type="Luma" inputCut="3011" inputFill="3010" onAir="False" masked="False" maskTop="9" maskBottom="-9" maskLeft="-16" maskRight="16">
                     <LumaParameters preMultiplied="True" clip="50" gain="70" inverse="False"/>
-                    <AdvancedChromaParameters foregroundLevel="0" backgroundLevel="0" keyEdge="50" spillSuppress="0" flareSuppress="0" brightness="0" contrast="0" saturation="100" red="0" green="0" blue="0" cursorXPosition="-15.38" cursorYPosition="8.38" cursorSize="6.25" sampledY="0.6748" sampledCb="0.1621" sampledCr="0.1015"/>
+                    <AdvancedChromaParameters foregroundLevel="0" backgroundLevel="0" keyEdge="50" spillSuppress="0" flareSuppress="0" brightness="0" contrast="0" saturation="100" red="0" green="0" blue="0" cursorXPosition="-15.35" cursorYPosition="8.35" cursorSize="6.2" sampledY="0.6748" sampledCb="0.1621" sampledCr="0.1015"/>
                     <PatternParameters style="DiamondIris" inverse="False" size="50" symmetry="50" softness="83" xPosition="0.5" yPosition="0.5"/>
                     <DVEParameters maskEnabled="False" maskTop="0" maskBottom="0" maskLeft="0" maskRight="0" shadowEnabled="False" lightSourceDirection="36" lightSourceAltitude="25" borderEnabled="True" borderStyle="None" borderBevelHue="0" borderBevelSaturation="0" borderBevelLuma="0" borderWidthOut="0" borderWidthIn="0.2" borderSoftnessOut="0" borderSoftnessIn="0" borderBevelOpacity="100" borderBevelPosition="0" borderBevelSoftness="0"/>
                     <FlyParameters enabled="False" xPosition="12.5" yPosition="7" xSize="0.2" ySize="0.2" rotation="0" rate="25"/>
@@ -184,6 +184,11 @@
     <MediaPlayers>
         <MediaPlayer index="0" sourceType="Still" sourceIndex="0"/>
     </MediaPlayers>
+    <MediaPool>
+        <Stills>
+            <Still index="2" name="iPhone8Plus-Overlay" path="ATEM Media Pool/iPhone8Plus-Overlay.png"/>
+        </Stills>
+    </MediaPool>
     <CameraControl>
         <Parameter device="1" category="Lens" parameter="ApertureFstop" value="5.25"/>
         <Parameter device="1" category="Video" parameter="ManualWhiteBalance" value="5600"/>
@@ -242,4 +247,29 @@
         <Property device="4" property="ApertureCoarse" value="1"/>
         <Property device="4" property="Locked" value="False"/>
     </CameraControl>
+    <MacroPool>
+        <Macro index="0" name="iPhone Overlay" description="">
+            <Op id="KeyType" mixEffectBlockIndex="0" keyIndex="0" type="DVE"/>
+            <Op id="KeyFillInput" mixEffectBlockIndex="0" keyIndex="0" input="Camera3"/>
+            <Op id="DVEAndFlyKeyXPosition" mixEffectBlockIndex="0" keyIndex="0" xPosition="5.34"/>
+            <Op id="DVEAndFlyKeyYPosition" mixEffectBlockIndex="0" keyIndex="0" yPosition="0"/>
+            <Op id="DVEAndFlyKeyXSize" mixEffectBlockIndex="0" keyIndex="0" xSize="0.720001"/>
+            <Op id="DVEAndFlyKeyYSize" mixEffectBlockIndex="0" keyIndex="0" ySize="0.720001"/>
+            <Op id="DVEKeyMaskEnable" mixEffectBlockIndex="0" keyIndex="0" enable="True"/>
+            <Op id="DVEKeyMaskLeft" mixEffectBlockIndex="0" keyIndex="0" left="11.17"/>
+            <Op id="DVEKeyMaskTop" mixEffectBlockIndex="0" keyIndex="0" top="0.479996"/>
+            <Op id="DVEKeyMaskRight" mixEffectBlockIndex="0" keyIndex="0" right="11.17"/>
+            <Op id="DVEKeyMaskBottom" mixEffectBlockIndex="0" keyIndex="0" bottom="0.460007"/>
+            <Op id="DVEKeyShadowEnable" mixEffectBlockIndex="0" keyIndex="0" enable="False"/>
+            <Op id="DVEKeyBorderEnable" mixEffectBlockIndex="0" keyIndex="0" enable="False"/>
+            <Op id="DownstreamKeyFillInput" keyIndex="0" input="MediaPlayer1"/>
+            <Op id="DownstreamKeyCutInput" keyIndex="0" input="MediaPlayer1Key"/>
+            <Op id="DownstreamKeyMaskEnable" keyIndex="0" enable="False"/>
+            <Op id="DownstreamKeyPreMultiply" keyIndex="0" preMultiply="True"/>
+            <Op id="KeyOnAir" mixEffectBlockIndex="0" keyIndex="0" onAir="True"/>
+            <Op id="DownstreamKeyOnAir" keyIndex="0" onAir="False"/>
+            <Op id="DownstreamKeyOnAir" keyIndex="0" onAir="True"/>
+        </Macro>
+    </MacroPool>
+    <MacroControl loop="False"/>
 </Profile>
