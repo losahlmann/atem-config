@@ -12,12 +12,15 @@
                 <DVEParameters rate="25" logoRate="25" reverseDirection="False" flipFlop="False" effect="PushRight" fillSource="3010" keySource="3011" enableKey="True" preMultipliedKey="True" clip="50" gain="70" invertKey="False"/>
             </TransitionStyle>
             <Keys>
-                <Key index="0" type="Chroma" inputCut="3011" inputFill="4" onAir="False" masked="False" maskTop="9" maskBottom="-9" maskLeft="-16" maskRight="16">
+                <Key index="0" type="Luma" inputCut="3011" inputFill="3010" onAir="False" masked="False" maskTop="9" maskBottom="-9" maskLeft="-16" maskRight="16">
                     <LumaParameters preMultiplied="True" clip="50" gain="70" inverse="False"/>
                     <AdvancedChromaParameters foregroundLevel="0" backgroundLevel="0" keyEdge="50" spillSuppress="0" flareSuppress="0" brightness="0" contrast="0" saturation="100" red="0" green="0" blue="0" cursorXPosition="-15.35" cursorYPosition="8.35" cursorSize="6.2" sampledY="0.6748" sampledCb="0.1621" sampledCr="0.1015"/>
                     <PatternParameters style="DiamondIris" inverse="False" size="50" symmetry="50" softness="83" xPosition="0.5" yPosition="0.5"/>
                     <DVEParameters maskEnabled="False" maskTop="0" maskBottom="0" maskLeft="0" maskRight="0" shadowEnabled="False" lightSourceDirection="36" lightSourceAltitude="25" borderEnabled="True" borderStyle="None" borderBevelHue="0" borderBevelSaturation="0" borderBevelLuma="0" borderWidthOut="0" borderWidthIn="0.2" borderSoftnessOut="0" borderSoftnessIn="0" borderBevelOpacity="100" borderBevelPosition="0" borderBevelSoftness="0"/>
-                    <FlyParameters enabled="False" xPosition="12.5" yPosition="7" xSize="0.2" ySize="0.2" rotation="0" rate="25"/>
+                    <FlyParameters enabled="True" xPosition="-9" yPosition="0" xSize="1" ySize="1" rotation="0" rate="25">
+                        <KeyFrameA xSize="1" ySize="1" xPosition="-9" yPosition="0" rotation="0" borderWidthOut="0" borderWidthIn="0.2" borderSoftnessOut="0" borderSoftnessIn="0" borderBevelSoftness="0" borderBevelPosition="0" borderOpacity="100" borderHue="0" borderSaturation="0" borderLuma="0" borderLightSourceDirection="36" borderLightSourceAltitude="25" maskTop="0" maskBottom="0" maskLeft="0" maskRight="0"/>
+                        <KeyFrameB xSize="1" ySize="1" xPosition="0" yPosition="0" rotation="0" borderWidthOut="0" borderWidthIn="0.2" borderSoftnessOut="0" borderSoftnessIn="0" borderBevelSoftness="0" borderBevelPosition="0" borderOpacity="100" borderHue="0" borderSaturation="0" borderLuma="0" borderLightSourceDirection="36" borderLightSourceAltitude="25" maskTop="0" maskBottom="0" maskLeft="0" maskRight="0"/>
+                    </FlyParameters>
                 </Key>
             </Keys>
             <FadeToBlack rate="25" isFullyBlack="False"/>
@@ -313,6 +316,16 @@
         <Macro index="4" name="Overlay Off" description="">
             <Op id="KeyOnAir" mixEffectBlockIndex="0" keyIndex="0" onAir="False"/>
             <Op id="DownstreamKeyOnAir" keyIndex="0" onAir="False"/>
+        </Macro>
+        <Macro index="5" name="Overlay Slide-in" description="">
+            <Op id="KeyType" mixEffectBlockIndex="0" keyIndex="0" type="Luma"/>
+            <Op id="KeyOnAir" mixEffectBlockIndex="0" keyIndex="0" onAir="True"/>
+            <Op id="FlyKeyRunToKeyFrame" mixEffectBlockIndex="0" keyIndex="0" keyFrameIndex="1"/>
+        </Macro>
+        <Macro index="6" name="Overlay Slide-out" description="">
+            <Op id="FlyKeyRunToKeyFrame" mixEffectBlockIndex="0" keyIndex="0" keyFrameIndex="0"/>
+            <Op id="MacroSleep" frames="25"/>
+            <Op id="KeyOnAir" mixEffectBlockIndex="0" keyIndex="0" onAir="False"/>
         </Macro>
     </MacroPool>
     <MacroControl loop="False"/>
