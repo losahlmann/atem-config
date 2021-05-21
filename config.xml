@@ -38,10 +38,10 @@
     </Auxiliaries>
     <Settings abDirect="True" cameraAux="-1">
         <Inputs>
-            <Input id="1" shortName="CAM1" longName="Camera 1" externalPortType="HDMI"/>
-            <Input id="2" shortName="CAM2" longName="Camera 2" externalPortType="HDMI"/>
-            <Input id="3" shortName="PHN" longName="iPhone" externalPortType="HDMI"/>
-            <Input id="4" shortName="CAM4" longName="Camera 4" externalPortType="HDMI"/>
+            <Input id="1" shortName="CAM" longName="Camera" externalPortType="HDMI"/>
+            <Input id="2" shortName="MAC" longName="MacBook" externalPortType="HDMI"/>
+            <Input id="3" shortName="RPI" longName="Raspberry Pi" externalPortType="HDMI"/>
+            <Input id="4" shortName="PHN" longName="iPhone" externalPortType="HDMI"/>
         </Inputs>
         <ButtonMapping>
             <Button index="0" externalInputIndex="0" mappedToCamera="True"/>
@@ -257,7 +257,7 @@
             <Op id="MediaPlayerSourceStill" mediaPlayer="0"/>
             <Op id="TransitionStyle" mixEffectBlockIndex="0" style="Mix"/>
             <Op id="KeyType" mixEffectBlockIndex="0" keyIndex="0" type="DVE"/>
-            <Op id="KeyFillInput" mixEffectBlockIndex="0" keyIndex="0" input="Camera3"/>
+            <Op id="KeyFillInput" mixEffectBlockIndex="0" keyIndex="0" input="Camera4"/>
             <Op id="DVEAndFlyKeyXPosition" mixEffectBlockIndex="0" keyIndex="0" xPosition="5.34"/>
             <Op id="DVEAndFlyKeyYPosition" mixEffectBlockIndex="0" keyIndex="0" yPosition="0"/>
             <Op id="DVEAndFlyKeyXSize" mixEffectBlockIndex="0" keyIndex="0" xSize="0.720001"/>
