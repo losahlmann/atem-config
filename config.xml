@@ -148,7 +148,7 @@
             </AudioInput>
             <AudioInput configuration="Stereo" id="1301">
                 <Analog level="ConsumerLine"/>
-                <AudioSource id="-65280" inputGain="2" pan="0" faderGain="0" mixOption="Off" delayFrames="0">
+                <AudioSource id="-65280" inputGain="2" pan="0" faderGain="2" mixOption="On" delayFrames="0">
                     <Equalizer enabled="True" gain="0">
                         <EqualizerBand index="0" enabled="True" shape="HighPass" frequencyRange="Low" frequency="46" gain="0" qFactor="0.71"/>
                         <EqualizerBand index="1" enabled="False" shape="LowShelf" frequencyRange="Low" frequency="49" gain="0" qFactor="0.8"/>
@@ -157,7 +157,7 @@
                         <EqualizerBand index="4" enabled="False" shape="HighShelf" frequencyRange="High" frequency="7260" gain="0" qFactor="0.8"/>
                         <EqualizerBand index="5" enabled="True" shape="LowPass" frequencyRange="High" frequency="12900" gain="0" qFactor="0.71"/>
                     </Equalizer>
-                    <DynamicsProcessor makeupGain="5.0">
+                    <DynamicsProcessor makeupGain="5">
                         <Expander enabled="True" gateMode="False" threshold="-40" range="9" ratio="1.1" attack="0.5" hold="0" release="100"/>
                         <Compressor enabled="True" threshold="-18" ratio="2" attack="0.7" hold="0" release="100"/>
                         <Limiter enabled="False" threshold="-12" attack="0.71" hold="0" release="93"/>
